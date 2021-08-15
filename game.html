@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Mosquito</title>
+
+    <link rel="stylesheet" href="design.css">
+    <script src="jogo.js"></script>
+</head>
+
+<!-- Chamando a function para resposibilidade na Tela -->
+
+<body onresize="ajustarTamanhoDaTela()">
+
+    <!-- Criando Painel de Vida e Cronometro -->
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="imagens/coracao_cheio.png">
+            <img id="v2" src="imagens/coracao_cheio.png">
+            <img id="v3" src="imagens/coracao_cheio.png">
+        </div>
+        <!-- Criar um span com ID de cronometro para acessa-lo no jogo.js -->
+        <div class="cronometro">Tempo Restante: <span id="cronometro"></span></div>
+    </div>
+
+    <script>
+        // Para que não inicie com um valor a menos
+        document.getElementById('cronometro').innerHTML = tempo
+            // 1° Acessar a function posicaoRandomica
+            // 2° Colocar a function posicaoRandomica dentro do metodo setInterval, para que repita a function a cada 1s
+            // 3° Criar a variavel criarMosquito para quando declarar vitoria não renascer mais mosquitos
+        var criarMosquito = setInterval(function() {
+            posicaoRandomica()
+        }, criarMosquitoTempo)
+    </script>
+</body>
+
+</html>
